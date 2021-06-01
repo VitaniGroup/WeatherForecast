@@ -39,7 +39,7 @@ namespace WeatherForecast.Controllers
 		[HttpGet]
 		public IEnumerable<string> Descriptions()
 		{
-			return Summaries);
+			return Summaries;
 		}
 	}
 }
