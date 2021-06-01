@@ -42,5 +42,12 @@ namespace WeatherForecast.Controllers
 		{
 			return Summaries;
 		}
+
+		[HttpGet]
+		[Route("Name")]
+		public string GetName()
+		{
+			return Environment.MachineName;
+		}
 	}
 }
