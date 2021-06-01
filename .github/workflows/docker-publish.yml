@@ -70,7 +70,6 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Update kubernetes  
       - uses: actions-hub/kubectl@master
         env:
           KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
