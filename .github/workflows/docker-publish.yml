@@ -3,6 +3,7 @@ name: Docker
 on:
   release:
     types: [published]
+  workflow_dispatch:
 env:
   # TODO: Change variable to your image's name.
   IMAGE_NAME: weatherforecast
