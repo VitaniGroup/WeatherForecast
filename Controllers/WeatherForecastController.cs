@@ -49,5 +49,11 @@ namespace WeatherForecast.Controllers
 		{
 			return Environment.MachineName;
 		}
+
+		[HttpGet]
+		public string SwaggerError()
+		{
+			return "You shall fail!";
+		}
 	}
 }
