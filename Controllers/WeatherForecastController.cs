@@ -35,5 +35,11 @@ namespace WeatherForecast.Controllers
 			})
 			.ToArray();
 		}
+
+		[HttpGet]
+		public IEnumerable<string> Descriptions()
+		{
+			return Summaries);
+		}
 	}
 }
