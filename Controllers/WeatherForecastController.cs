@@ -37,6 +37,7 @@ namespace WeatherForecast.Controllers
 		}
 
 		[HttpGet]
+		[Route("Descriptions")]
 		public IEnumerable<string> Descriptions()
 		{
 			return Summaries;
