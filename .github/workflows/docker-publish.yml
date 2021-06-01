@@ -35,7 +35,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
+      - uses: actions-hub/kubectl@master
+        env:
+          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
+          
       - name: Build image
         run: docker build . --file Dockerfile --tag $IMAGE_NAME
 
@@ -64,3 +67,7 @@ jobs:
           docker push $IMAGE_ID:latest
           docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
+      - name: Update kubernetes  
+      - uses: actions-hub/kubectl@master
+        with:
+          args: rollout restart deploy weatherforecast-deployment -n weather
