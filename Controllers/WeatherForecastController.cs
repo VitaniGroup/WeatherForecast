@@ -51,9 +51,10 @@ namespace WeatherForecast.Controllers
 		}
 
 		[HttpGet]
+		[Route("SwaggerSuccess")]
 		public string SwaggerError()
 		{
-			return "You shall fail!";
+			return "You shall fail no more!";
 		}
 	}
 }
