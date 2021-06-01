@@ -66,9 +66,11 @@ jobs:
           docker push $IMAGE_ID:$VERSION
   
   kubernetes:
-	needs: push
+    needs: push    
+    runs-on: ubuntu-latest
+    
     steps:
-	  - name: Update kubernetes  
+      - name: Update kubernetes  
       - uses: actions-hub/kubectl@master
         env:
           KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
